@@ -1,0 +1,19 @@
+{
+  "name": "m3u2trelloapp_saramunoz",
+  "version": "1.0.0",
+  "description": "API FAKE for trello app",
+  "main": "index.js",
+  "scripts": {
+    "json:server": "json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saramu01/M3U2TrelloApp_SaraMunoz.git"
+  },
+  "author": "sara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saramu01/M3U2TrelloApp_SaraMunoz/issues"
+  },
+  "homepage": "https://github.com/saramu01/M3U2TrelloApp_SaraMunoz#readme"
+}
