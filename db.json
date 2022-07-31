@@ -1,0 +1,31 @@
+{
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Primer Avance",
+        "person": "Sara Muñoz Gomez",
+        "details": "Diseñar Index html",
+        "state": "Finalizadas",
+        "deadline": 1615524959,
+        "created": 1615352159
+      },
+      {
+        "id": 2,
+        "title": "Segundo Avance",
+        "person": "Sara Muñoz Gomez",
+        "details": "Diseño estilo",
+        "state": "En Progreso",
+        "deadline": 1658897940,
+        "created": 1656997200
+      },
+      {
+        "id": 3,
+        "title": "Tercer Avance",
+        "person": "Sara Muñoz Gomez",
+        "details": "Crear app",
+        "state": "Por hacer",
+        "deadline": 1659329940,
+        "created": 1656997200
+      }
+    ]
+  }

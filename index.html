@@ -1,23 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Kanban Board</title>
-	<link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanba App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="/assets/trello.png">
 </head>
-<body>
-	<div class="kanban">
-		<!-- <div class="kanban__column">
-			<div class="kanban__column-title">Not Started</div>
-			<div class="kanban__items">
-				<div contenteditable class="kanban__item-input">Wash the dishes</div>
-				<div class="kanban__dropzone"></div>
-			</div>
-			<button class="kanban__add-item" type="button">+ Add</button>
-		</div> -->
-	</div>
-	<script src="js/main.js" type="module"></script>
-</body>
-</html>
+<body class="l-app" id="app">
+    <!-- Header Section -->
+    
+    <header class="header-app">
+      <div class="l-container">
+        <a href=""></a>
+        <a href=""></a>
+        <button class="button button-primary" id="btnNewTask">Crear una nueva tarea</button>
+      </div>
+    </header>
+    <!-- End Header Section -->
+    
+    <!-- Columns Section -->
+    <main class="main-app">
+      <div class="l-container">
+        
+        <!-- To-Do Section -->
+        <section class="section-app">
+          <h2 class="section-status-title" >Por hacer</h2>
+          <div class="container-tasks" id="todoTasks"></div>
+        </section>
+        <!-- End To-Do Section -->
+
+        <!-- In Progress Section -->
+        <section class="section-app">
+          <h2 class="section-status-title">En Progreso</h2>
+          <div class="container-tasks" id="progressTasks"></div>
+        </section>
+        <!-- End In Progress TareaSection -->
+
+        <!-- DoneTasks Section -->
+        <section class="section-app">
+          <h2 class="section-status-title">Finalizadas</h2>
+          <div class="container-tasks" id="doneTasks"></div>
+        </section>
+        <!-- End DoneTasks Section-->
+
+        <!-- Create Section-->
+        <aside class="aside-app" id="modalNewTask">
+          <div class="l-container">
+            <div class="form-container">
+              <h2 class="aside-form-title">New Task</h2>
+              <form class="form-new-task" id="formNewTask">
+
+                <!-- Title Section-->
+                <div class="row-form">
+                  <label for="titleTask" class="form-new-task__label" >Title:</label>
+                  <input
+                    id="titleTask"
+                    name="titleTask"
+                    type="text"
+                    class="form-new-task_input"
+                    placeholder="Escribe un título"
+                    autocomplete = "off" 
+                    required
+                  />
+                </div>
+                <!-- End Title Section-->
+
+                <!-- Responsible Section-->
+                <div class="row-form">
+                  <label for="responsibleTask" class="form-new-task__label"
+                    >Responsible:</label>
+                    <input
+                    id="responsibleTask"
+                    name="responsibleTask"
+                    type="text"
+                    class="form-responsible_input"
+                    placeholder="Escribe un responsable"
+                    autocomplete = "off" 
+                  />
+                </div>
+                <!-- End Responsible Section-->
+
+                <!-- Description Section-->
+                <div class="row-form">
+                  <label for="detailsTask" class="form-new-task__label"
+                    >Description:</label
+                  >
+                  <textarea 
+                  class= "" 
+                  name="detailsTask" 
+                  id="detailsTask cols" 
+                  rows="3" 
+                  placeholder="Ingresa el detalle de la tarea"></textarea>
+                </div>
+                <!-- End Description Section-->
+
+                <!-- Task Time Section-->
+                <div class="row-form">
+                  <label for="deadLineTask" class="form-new-task__label"
+                    >Deadline Time:</label
+                  >
+                  <select name="deadLineTask" id="deadLineTask">
+                    <option value="">Please select</option>
+                    <option value="1">1 day</option>
+                    <option value="2">2 days</option>
+                    <option value="3">3 days</option>
+                    <option value="4">4 days</option>
+                    <option value="5">5 days</option>
+                    <option value="6">6 days</option>
+                    <option value="7">1 week</option>
+                    <option value="14">2 weeks</option>
+                    <option value="21">3 weeks</option>
+                    <option value="28">1 month</option>
+                  </select>
+                </div>
+                <!-- End Task Time Section-->
+
+                <!-- Buttons Section-->
+                <div class="row-form">
+                  <div class="form-new-task__buttons">
+                    <button class="button button-primary ghost" type="submit" id="btnNewTask">Accept</button>
+                    <button class="button button-secondary ghost" type="reset" id="btnCancelNewTask">Cancel</button>
+                  </div>
+                </div>
+                <!-- End Buttons Section-->
+
+              </form>
+            </div>
+          </div>
+        </aside>
+        <!-- End Create Section-->
+      </div>
+    </main>
+    <!-- End Columns Section -->
+
+    <!-- External Resources Section-->
+    <script src="js/libraries/axios.js"></script>
+    <script src="js/libraries/draggable.js"></script>
+    <script src="js/libraries/hammer.js"></script>
+    <script src="js/libraries/moment.js"></script>
+    <!-- End External Resources Section-->
+
+    <!-- Internal Resources Section-->
+    <script src="js/api/request.js"></script>
+    <script src="js/helpers/dates.js"></script>
+    <script src="js/helpers/toggleModal.js"></script>
+    <script src="js/helpers/draggandDrop.js"></script>
+    <script src="js/helpers/gesturesHammer.js"></script>
+    <script src="js/helpers/newTask.js"></script>
+    <!-- End Internal Resources Section-->
+    
+    </body>
+    </html>
