@@ -10,7 +10,7 @@ form.addEventListener('submit', (ev) => {
     details: formData.detailsTask.value,
     deadline: Number(moment().add(formData.deadLineTask.value, 'days').format('X')),
     created: Number(moment().format("X")),
-    state: 'to-do'
+    state: 'Por hacer'
   };
   axios.post(`${API_URL}/tasks`, data)
     .then((res) => {
